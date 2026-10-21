@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f2efe9">
+  <meta name="description" content="Поделитесь впечатлениями о посещении. Выберите оценку и перейдите к отзыву.">
+  <title>Ваш отзыв — как всё прошло?</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23bd583d'/%3E%3Cpath d='m32 12 6 13 14 2-10 10 2 15-12-7-12 7 2-15-10-10 14-2Z' fill='%23fff5e7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="./" aria-label="На главную"><span class="brand-symbol" aria-hidden="true">✳</span><span>обратная связь<span class="brand-dot">.</span></span></a>
+    <button class="settings-button" id="settings-open" aria-label="Настроить страницу" title="Настроить страницу"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></svg><span>Настройки</span></button>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span></span> ВАЖЕН КАЖДЫЙ ОТЗЫВ</div>
+      <h1 id="page-title">Как всё <em>прошло?</em></h1>
+      <p class="intro-text">Хорошие впечатления или то, что хочется изменить.<br>Поделитесь своим опытом — начните с оценки.</p>
+    </section>
+    <section class="review-section" aria-label="Оценка посещения">
+      <div class="review-card">
+        <div class="card-topline"><span>ВАШЕ ВПЕЧАТЛЕНИЕ</span><span>ОТ 1 ДО 5</span></div>
+        <div id="rating-screen">
+          <h2>Оцените ваш визит</h2>
+          <p class="muted">Просто нажмите на одну из звёзд</p>
+          <nav class="public-review-inline" id="public-reviews" aria-label="Прямые ссылки на публичные отзывы"><a id="public-yandex" target="_blank" rel="noopener noreferrer">Яндекс Карты ↗</a><a id="public-gis" target="_blank" rel="noopener noreferrer">2ГИС ↗</a></nav>
+          <fieldset class="rating-field"><legend class="sr-only">Оценка от 1 до 5 звёзд</legend><div class="stars" id="stars"></div></fieldset>
+          <p id="rating-description" class="sr-only" aria-live="polite">Какое впечатление осталось у вас?</p>
+
+          <section id="telegram-feedback" class="feedback-panel" aria-labelledby="feedback-title" hidden>
+            <h3 id="feedback-title">Поделитесь впечатлениями</h3>
+            <p id="feedback-rating" class="feedback-rating"></p>
+            <form id="feedback-form">
+              <label for="feedback-text">Ваш отзыв</label>
+              <textarea id="feedback-text" rows="4" maxlength="2000" required placeholder="Расскажите, что вам понравилось или что можно улучшить"></textarea>
+              <button class="primary" id="feedback-submit" type="submit">Отправить отзыв <span aria-hidden="true">→</span></button>
+              <p class="feedback-privacy">Сообщение получит владелец в Telegram. Переходить в приложение не нужно.</p>
+              <p id="feedback-status" class="feedback-status" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+          <p id="route-status" class="route-status" role="status" hidden></p>
+        </div>
+      </div>
+      <div class="under-card"><span aria-hidden="true">✧</span><p>Пара секунд, чтобы поделиться.<br>Каждый отзыв имеет значение.</p></div>
+    </section>
+  </main>
+  <footer><span>Ваш опыт. Ваше мнение.</span><span>Спасибо, что делитесь впечатлениями <span aria-hidden="true">↗</span></span></footer>
+  <dialog id="settings-dialog"><form id="settings-form"><div class="dialog-heading"><h2>Настройка страницы</h2><button type="button" id="settings-close" class="close" aria-label="Закрыть">×</button></div><p class="muted">Для каждой звезды выберите направление. Ссылки на площадки задаются ниже. При выборе Telegram отзыв отправляется из формы на сайте.</p><fieldset class="route-settings"><legend>Куда открывать каждую оценку</legend><div class="route-setting"><label for="route-1"><span aria-hidden="true">★</span> 1 звезда</label><select id="route-1"><option value="gis">2ГИС</option><option value="yandex">Яндекс Карты</option><option value="telegram">Telegram</option></select></div><div class="route-setting"><label for="route-2"><span aria-hidden="true">★★</span> 2 звезды</label><select id="route-2"><option value="gis">2ГИС</option><option value="yandex">Яндекс Карты</option><option value="telegram">Telegram</option></select></div><div class="route-setting"><label for="route-3"><span aria-hidden="true">★★★</span> 3 звезды</label><select id="route-3"><option value="gis">2ГИС</option><option value="yandex">Яндекс Карты</option><option value="telegram">Telegram</option></select></div><div class="route-setting"><label for="route-4"><span aria-hidden="true">★★★★</span> 4 звезды</label><select id="route-4"><option value="gis">2ГИС</option><option value="yandex">Яндекс Карты</option><option value="telegram">Telegram</option></select></div><div class="route-setting"><label for="route-5"><span aria-hidden="true">★★★★★</span> 5 звёзд</label><select id="route-5"><option value="gis">2ГИС</option><option value="yandex">Яндекс Карты</option><option value="telegram">Telegram</option></select></div></fieldset><label for="yandex-url">Ссылка на карточку в Яндекс Картах</label><input id="yandex-url" type="url" placeholder="https://yandex.ru/maps/org/…"><label for="gis-url">Ссылка на карточку в 2ГИС</label><input id="gis-url" type="url" placeholder="https://2gis.ru/…/firm/…"><p class="settings-note">Для направления Telegram откроется форма на сайте. Токен бота и получатель задаются только на сервере.</p><p id="settings-error" role="alert"></p><button class="primary" type="submit">Сохранить настройки <span>✓</span></button><button id="share" type="button" class="copy-button">Скопировать ссылку для гостей <span>↗</span></button><p id="share-status" role="status" class="muted"></p><p class="settings-note">Настройки сохраняются в этом браузере. Ссылка для гостей содержит настройки заведения. Нажатие на звезду открывает площадку или форму сообщения владельцу. Прямые ссылки на публичные отзывы доступны до выбора звёзд. На сайте оценки не сохраняются. При заполненных настройках сервера сообщение из формы отправляется в Telegram без открытия приложения.</p></form></dialog>
+  <script src="routing.js"></script><script src="app.js"></script>
+</body>
+</html>
